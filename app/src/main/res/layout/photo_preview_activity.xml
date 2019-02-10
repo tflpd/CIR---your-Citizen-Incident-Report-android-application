@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/cancelImageBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="ReturnToHomeView"
+        android:background="@android:drawable/ic_menu_close_clear_cancel"
+        android:contentDescription="@string/cancel_button" />
+    <!--app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"-->
+
+    <ImageButton
+        android:id="@+id/forwardImageBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@android:drawable/checkbox_on_background"
+        android:contentDescription="@string/forward_image_button"
+        android:onClick="ForwardToReportView"/>
+    <!--app:srcCompat="@android:drawable/checkbox_on_background"-->
+
+    <ImageButton
+        android:id="@+id/imageSaveBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/forwardImageBtn"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@android:drawable/ic_menu_save"
+        android:contentDescription="@string/image_save_button" />
+    <!--app:srcCompat="@android:drawable/ic_menu_save"-->
+
+</android.support.constraint.ConstraintLayout>

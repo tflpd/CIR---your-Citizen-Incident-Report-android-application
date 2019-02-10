@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Citizen Reporting Tool</string>
+    <string name="camera_button">Camera Capture Button</string>
+    <string name="cancel_button">Cancel Button</string>
+    <string name="forward_image_button">Forward Image Button</string>
+    <string name="image_save_button">Image Save Button</string>
+    <string name="image_thumbnail">Image Thumbnail</string>
+    <string name="report_text_hint">Type a short description for the problem to be reported here..</string>
+    <string name="back_btn">Back</string>
+    <string name="send_report_btn">Send Report Btn</string>
+    <string name="menu_btn">Menu Button</string>
+    <string name="flash_off_btn">Flash Off Button</string>
+    <string name="my_account_text">My Account</string>
+    <string name="my_reports_text">My Reports</string>
+    <string name="my_settings_text">My Settings</string>
+    <string name="log_out_text">Log Out</string>
+    <string name="current_phone_number">Current Phone Number:</string>
+    <string name="current_password_txtview">Current Password:</string>
+    <string name="current_email">Current email:</string>
+    <string name="notifications">Notifications</string>
+    <string name="mobile_data_efficient_mode">Mobile Data efficient mode</string>
+</resources>

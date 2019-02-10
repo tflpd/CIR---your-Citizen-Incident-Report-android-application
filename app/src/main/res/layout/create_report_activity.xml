@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageThumbnail"
+        android:layout_width="228dp"
+        android:layout_height="344dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/image_thumbnail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/reportText"
+        android:layout_width="fill_parent"
+        android:layout_height="344dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints="text"
+        android:hint="@string/report_text_hint"
+        android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
+        android:textColorHighlight="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageThumbnail" />
+
+    <Button
+        android:id="@+id/back_menu_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:drawableStart="@drawable/ic_baseline_navigate_before_24px"
+        android:background="#00000000"
+        android:paddingEnd="60dp"
+        android:onClick="ReturnToPreviewView"/>
+
+<!--    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/back_btn"
+        android:onClick="ReturnToPreviewView"
+        android:background="@android:drawable/ic_menu_revert"/>-->
+
+    <!--app:srcCompat="@android:drawable/ic_menu_revert"-->
+
+    <ImageButton
+        android:id="@+id/sendReportButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@android:drawable/ic_menu_send"
+        android:contentDescription="@string/send_report_btn" />
+    <!--app:srcCompat="@android:drawable/ic_menu_send"-->
+
+
+
+</android.support.constraint.ConstraintLayout>
