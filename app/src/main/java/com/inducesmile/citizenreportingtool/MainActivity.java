@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Camera;
+import android.graphics.Color;
 import android.graphics.ImageFormat;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraAccessException;
@@ -51,6 +52,15 @@ import java.util.Date;
 import java.util.List;
 
  public class MainActivity extends AppCompatActivity {
+
+     public static final String CAMERA_FRONT = "1";
+     public static final String CAMERA_BACK = "0";
+
+     private String cameraId = CAMERA_BACK;
+     private boolean isFlashSupported;
+     private boolean isTorchOn;
+     ImageButton flashButton;
+
 
      private static final int REQUEST_CAMERA_PERMISSION_RESULT = 0;
      private static final int REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION_RESULT = 1;
@@ -306,6 +316,14 @@ import java.util.List;
                 //Toast.makeText(getApplicationContext(), "OLAPOPA", Toast.LENGTH_SHORT).show();
             }
         });
+        flashButton = (ImageButton) findViewById(R.id.flashBtn);
+
+        flashButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchFlash();
+            }
+        });
         //mRecordImageButton = (ImageButton) findViewById(R.id.cameraImageButton2);
         /*mRecordImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -429,6 +447,12 @@ import java.util.List;
              if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) ==
                      PackageManager.PERMISSION_GRANTED){
                  try {
+                     CameraCharacteristics cameraCharacteristics = cameraManager.getCameraCharacteristics(cameraId);
+                     Boolean available = cameraCharacteristics.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
+                     isFlashSupported = available == null ? false : available;
+
+                     setupFlashButton();
+
                      cameraManager.openCamera(mCameraId, mCameraDeviceStateCallBack, mBackgroundHandler);
                  } catch (CameraAccessException e) {
                      e.printStackTrace();
@@ -627,4 +651,45 @@ import java.util.List;
             //Toast.makeText(this, "OOPS", Toast.LENGTH_SHORT).show();
         }
     }
+
+    // Triggered everytime the flash button is pushed and opens/closes the flash accordingly
+     public void switchFlash() {
+         try {
+             if (cameraId.equals(CAMERA_BACK)) {
+                 if (isFlashSupported) {
+                     if (isTorchOn) {
+                         mCaptureRequestBuilder.set(CaptureRequest.FLASH_MODE, CaptureRequest.FLASH_MODE_OFF);
+                         mPreviewCaptureSession.setRepeatingRequest(mCaptureRequestBuilder.build(), null, null);
+                         flashButton.setImageResource(R.drawable.ic_round_flash_off_24px);
+                         /*flashButton.setBackgroundColor(Color.TRANSPARENT);*/
+                         isTorchOn = false;
+                     } else {
+                         mCaptureRequestBuilder.set(CaptureRequest.FLASH_MODE, CaptureRequest.FLASH_MODE_TORCH);
+                         mPreviewCaptureSession.setRepeatingRequest(mCaptureRequestBuilder.build(), null, null);
+                         flashButton.setImageResource(R.drawable.ic_round_flash_on_24px);
+                         /*flashButton.setBackgroundColor(Color.TRANSPARENT);*/
+                         isTorchOn = true;
+                     }
+                 }
+             }
+         } catch (CameraAccessException e) {
+             e.printStackTrace();
+         }
+     }
+
+     // Setting up the starting status of the flash button
+     public void setupFlashButton() {
+         if (cameraId.equals(CAMERA_BACK) && isFlashSupported) {
+             flashButton.setVisibility(View.VISIBLE);
+
+             if (isTorchOn) {
+                 flashButton.setImageResource(R.drawable.ic_round_flash_on_24px);
+             } else {
+                 flashButton.setImageResource(R.drawable.ic_round_flash_off_24px);
+             }
+
+         } else {
+             flashButton.setVisibility(View.GONE);
+         }
+     }
 }
