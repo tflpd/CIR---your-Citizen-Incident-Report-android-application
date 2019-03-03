@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 public class MenuActivity extends AppCompatActivity {
@@ -55,5 +56,10 @@ public class MenuActivity extends AppCompatActivity {
     public void toMySettings(View view) {
         Intent goToMyAccountIntent = new Intent(getApplicationContext(), MySettingsActivity.class);
         startActivity(goToMyAccountIntent);
+    }
+
+    public void toLoginMenuActivity(View view) {
+        Intent toLogInIntent = new Intent(getApplicationContext(), LogInActivity.class);
+        startActivity(toLogInIntent);
     }
 }

@@ -27,7 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:background="?android:selectableItemBackground"
         android:src="@android:drawable/ic_menu_camera"
-        android:fillColor="#cccccc"
+        android:fillColor="@color/transparent_btn_white"
         android:scaleType="fitXY" />
     <!--android:background="@android:drawable/ic_menu_camera"-->
 

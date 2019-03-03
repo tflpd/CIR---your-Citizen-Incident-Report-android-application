@@ -20,38 +20,26 @@
         app:layout_constraintTop_toTopOf="parent"
         android:onClick="returnToMenu"/>
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="100dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/current_phone_number_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
         android:text="@string/current_phone_number"
-        app:layout_constraintEnd_toEndOf="@+id/divider"
-        app:layout_constraintStart_toStartOf="@+id/divider"
-        app:layout_constraintTop_toBottomOf="@+id/divider"
         android:textColor="#000000"
         android:textSize="20sp"
-        android:gravity="center"/>
+        app:layout_constraintEnd_toEndOf="@+id/current_password_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/current_password_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/current_password_edit_text" />
 
     <EditText
         android:id="@+id/current_phone_number_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:autoText="true"
+        android:gravity="center"
         android:inputType="phone"
         android:numeric="integer"
         android:phoneNumber="true"
@@ -59,25 +47,29 @@
         android:textColor="#80000000"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="@+id/current_phone_number_txtview"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="@+id/current_phone_number_txtview"
-        app:layout_constraintTop_toBottomOf="@+id/current_phone_number_txtview"
-        android:gravity="center"/>
+        app:layout_constraintTop_toBottomOf="@+id/current_phone_number_txtview" />
 
     <EditText
         android:id="@+id/current_password_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPassword"
         android:text="********"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
-        app:layout_constraintEnd_toEndOf="@+id/divider"
-        app:layout_constraintStart_toStartOf="@+id/divider"
-        android:gravity="center"
         android:textColor="#80000000"
-        android:textSize="17sp"/>
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/current_password_txtview"
@@ -91,32 +83,21 @@
         app:layout_constraintEnd_toEndOf="@+id/current_password_edit_text"
         app:layout_constraintStart_toStartOf="@+id/current_password_edit_text" />
 
-    <View
-        android:id="@+id/divider4"
-        android:layout_width="100dp"
-        android:layout_height="1dp"
-        android:layout_marginBottom="28dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/current_password_txtview"
-        app:layout_constraintEnd_toEndOf="@+id/current_password_txtview"
-        app:layout_constraintStart_toStartOf="@+id/current_password_txtview" />
-
     <EditText
         android:id="@+id/current_email_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints="email"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="exampleEmail@gmail.com"
-        app:layout_constraintBottom_toTopOf="@+id/divider4"
-        app:layout_constraintEnd_toEndOf="@+id/divider4"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="@+id/divider4"
         android:gravity="center"
+        android:inputType="textEmailAddress"
+        android:text="firstUser@gmail.com"
         android:textColor="#80000000"
         android:textSize="17sp"
-        android:autofillHints="email"/>
+        app:layout_constraintBottom_toTopOf="@+id/current_password_txtview"
+        app:layout_constraintEnd_toEndOf="@+id/current_password_txtview"
+        app:layout_constraintStart_toStartOf="@+id/current_password_txtview" />
 
     <TextView
         android:id="@+id/current_email_txtview"
@@ -130,5 +111,16 @@
         app:layout_constraintEnd_toEndOf="@+id/current_email_edit_text"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="@+id/current_email_edit_text" />
+
+    <Button
+        android:id="@+id/save_changes_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/save_user_changes"
+        android:onClick="showSuccessfulUserChange"
+        app:layout_constraintEnd_toEndOf="@+id/current_phone_number_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/current_phone_number_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/current_phone_number_edit_text" />
 
 </android.support.constraint.ConstraintLayout>

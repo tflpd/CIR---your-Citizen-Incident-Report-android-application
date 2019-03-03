@@ -60,7 +60,8 @@
         android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="@+id/divider2"
         app:layout_constraintStart_toStartOf="@+id/divider2"
-        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
+        android:onClick="toLoginMenuActivity"/>
 
     <View
         android:id="@+id/divider1"

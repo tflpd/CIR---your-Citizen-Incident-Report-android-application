@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <ImageView
         android:id="@+id/imageThumbnail"
         android:layout_width="228dp"
@@ -24,9 +25,9 @@
     <EditText
         android:id="@+id/reportText"
         android:layout_width="fill_parent"
-        android:layout_height="75dp"
+        android:layout_height="150dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:autofillHints="text"
@@ -37,7 +38,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageThumbnail"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
     <!--android:textColorHighlight="@android:color/holo_blue_light"-->
 
     <Button
@@ -77,9 +78,118 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@android:drawable/ic_menu_send"
-        android:contentDescription="@string/send_report_btn" />
+        android:contentDescription="@string/send_report_btn"
+        android:onClick="sendIncident"/>
+
+    <SeekBar
+        android:id="@+id/emergencyLevelBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="8dp"
+        android:max="100"
+        android:progress="5"
+        app:layout_constraintBottom_toTopOf="@+id/reportText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageThumbnail"
+        app:layout_constraintVertical_bias="0.645" />
+
+    <TextView
+        android:id="@+id/emergencyLevelText"
+        android:layout_width="119dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/emergency_level_text"
+        app:layout_constraintBottom_toTopOf="@+id/reportText"
+        app:layout_constraintEnd_toStartOf="@+id/emergencyLevelBar"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageThumbnail"
+        app:layout_constraintVertical_bias="0.643" />
+
+    <ImageView
+        android:id="@+id/downArrowLow"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_angle_down_solid"
+        app:layout_constraintBottom_toTopOf="@+id/emergencyLevelBar"
+        app:layout_constraintStart_toStartOf="@+id/emergencyLevelBar" />
     <!--app:srcCompat="@android:drawable/ic_menu_send"-->
 
+    <ImageView
+        android:id="@+id/downArrowMed"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_angle_down_solid"
+        app:layout_constraintBottom_toTopOf="@+id/emergencyLevelBar"
+        app:layout_constraintEnd_toStartOf="@+id/downArrowHigh"
+        app:layout_constraintStart_toEndOf="@+id/downArrowLow" />
+
+
+    <ImageView
+        android:id="@+id/downArrowHigh"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_angle_down_solid"
+        app:layout_constraintBottom_toTopOf="@+id/emergencyLevelBar"
+        app:layout_constraintEnd_toEndOf="@+id/emergencyLevelBar" />
+
+    <TextView
+        android:id="@+id/emergencyLevelLowtextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Low"
+        app:layout_constraintBottom_toTopOf="@+id/downArrowLow"
+        app:layout_constraintEnd_toEndOf="@+id/downArrowLow"
+        app:layout_constraintStart_toStartOf="@+id/downArrowLow" />
+
+    <TextView
+        android:id="@+id/emergencyLevelMedtextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium"
+        app:layout_constraintBottom_toTopOf="@+id/downArrowMed"
+        app:layout_constraintEnd_toEndOf="@+id/downArrowMed"
+        app:layout_constraintStart_toStartOf="@+id/downArrowMed" />
+
+    <TextView
+        android:id="@+id/emergencyLevelHightextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="High"
+        app:layout_constraintBottom_toTopOf="@+id/downArrowHigh"
+        app:layout_constraintEnd_toEndOf="@+id/downArrowHigh"
+        app:layout_constraintStart_toStartOf="@+id/downArrowHigh" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="395dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageThumbnail" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="395dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/reportText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

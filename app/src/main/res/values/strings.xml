@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Citizen Reporting Tool</string>
+    <string name="app_name">PIR</string>
     <string name="camera_button">Camera Capture Button</string>
     <string name="cancel_button">Cancel Button</string>
     <string name="forward_image_button">Forward Image Button</string>
@@ -19,4 +19,12 @@
     <string name="current_email">Current email:</string>
     <string name="notifications">Notifications</string>
     <string name="mobile_data_efficient_mode">Mobile Data efficient mode</string>
+    <string name="emergency_level_text">Emergency Level:</string>
+    <string name="save_user_changes">Save Changes</string>
+    <string name="capture_text_view">Capture</string>
+    <string name="describe_text_view">Describe</string>
+    <string name="report_text_view">Report</string>
+    <string name="PIR_description">Your public incident reporting tool</string>
+    <string name="log_in">Log In</string>
+    <string name="forgot_your_password"><u>Forgot your password?</u></string>
 </resources>

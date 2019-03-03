@@ -8,4 +8,16 @@
     <color name="disable_forground_grey">#42221f1f</color>
     <color name="disable_thumb_grey">#1c000000</color>
     <color name="enable_thumb_green">#42221f1f</color>
+
+    <color name="transparent_btn_white">#FFFFFF</color>
+
+    <color name="emergency_level_low">#06F300</color>
+    <color name="emergency_level_medium">#FF8109</color>
+    <color name="emergency_level_high">#FF0000</color>
+
+
+    <color name="link_blue">#0022FF</color>
+
+    <color name="arrow_black">#535353</color>
+
 </resources>

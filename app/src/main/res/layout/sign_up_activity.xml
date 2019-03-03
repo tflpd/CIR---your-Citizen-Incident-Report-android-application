@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/signUpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Sign up easily and quickly!"
+        android:textColor="@color/transparent_btn_white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <TextView
+        android:id="@+id/newUserTextView"
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="New User?"
+        android:textColor="@color/transparent_btn_white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/signUpTextView"
+        app:layout_constraintEnd_toEndOf="@+id/signUpTextView"
+        app:layout_constraintStart_toStartOf="@+id/signUpTextView" />
+
+    <EditText
+        android:id="@+id/userEmailSignUpEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:background="@color/transparent_btn_white"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/disable_forground_grey"
+        app:layout_constraintEnd_toEndOf="@+id/signUpTextView"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/signUpTextView"
+        app:layout_constraintTop_toBottomOf="@+id/signUpTextView" />
+
+    <EditText
+        android:id="@+id/userPasswordSignUpEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/transparent_btn_white"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="@color/disable_forground_grey"
+        app:layout_constraintEnd_toEndOf="@+id/userEmailSignUpEditText"
+        app:layout_constraintStart_toStartOf="@+id/userEmailSignUpEditText"
+        app:layout_constraintTop_toBottomOf="@+id/userEmailSignUpEditText" />
+
+    <EditText
+        android:id="@+id/userPasswordConfirmSignUpEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/transparent_btn_white"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textColorHint="@color/disable_forground_grey"
+        app:layout_constraintEnd_toEndOf="@+id/userPasswordSignUpEditText"
+        app:layout_constraintStart_toStartOf="@+id/userPasswordSignUpEditText"
+        app:layout_constraintTop_toBottomOf="@+id/userPasswordSignUpEditText" />
+
+    <TextView
+        android:id="@+id/passwordStrengthTextView"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Password Strength"
+        android:textColor="@color/transparent_btn_white"
+        app:layout_constraintEnd_toEndOf="@+id/userPasswordConfirmSignUpEditText"
+        app:layout_constraintStart_toStartOf="@+id/userPasswordConfirmSignUpEditText"
+        app:layout_constraintTop_toBottomOf="@+id/userPasswordConfirmSignUpEditText" />
+
+    <ProgressBar
+        android:id="@+id/passwordStrengthProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/passwordStrengthTextView"
+        app:layout_constraintStart_toStartOf="@+id/passwordStrengthTextView"
+        app:layout_constraintTop_toBottomOf="@+id/passwordStrengthTextView"
+        android:max="100"
+        android:progress="10"
+        android:progressBackgroundTint="@color/transparent_btn_white"/>
+
+    <EditText
+        android:id="@+id/phoneNumberEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/transparent_btn_white"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="@+id/passwordStrengthProgressBar"
+        app:layout_constraintStart_toStartOf="@+id/passwordStrengthProgressBar"
+        app:layout_constraintTop_toBottomOf="@+id/passwordStrengthProgressBar" />
+
+    <Button
+        android:id="@+id/signUpSignUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="Sign Up"
+        app:layout_constraintEnd_toEndOf="@+id/phoneNumberEditText"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/phoneNumberEditText"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumberEditText"
+        android:onClick="toLogInActivity"/>
+
+</android.support.constraint.ConstraintLayout>

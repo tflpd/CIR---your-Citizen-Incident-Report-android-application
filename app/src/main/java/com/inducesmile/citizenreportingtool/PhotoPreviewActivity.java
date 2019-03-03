@@ -9,6 +9,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -19,6 +20,7 @@ public class PhotoPreviewActivity extends AppCompatActivity {
     //private TextureView mTextureView;
     private ImageView mImageView;
     private String mImagePath;
+    private boolean mSaveImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +39,10 @@ public class PhotoPreviewActivity extends AppCompatActivity {
 
         mImagePath = activityThatCalled.getExtras().getString("pathToImage");
 
-        //TextView mTextView = (TextView) findViewById(R.id.textView);
+        //TextView mTextView = (TextView) findViewById(R.id.emergencyLevelText);
         mImageView = (ImageView) findViewById(R.id.imageView);
+
+        mSaveImage = false;
 
         //mTextView.append(" " + previousActivity);
 
@@ -71,5 +75,10 @@ public class PhotoPreviewActivity extends AppCompatActivity {
         Intent sendImageForReportIntent = new Intent(getApplicationContext(), CreateReportActivity.class);
         sendImageForReportIntent.putExtra("pathToImage", mImagePath);
         startActivity(sendImageForReportIntent);
+    }
+
+    public void downloadImage(View view) {
+        mSaveImage = true;
+        Toast.makeText(getApplicationContext(), "Image saved!", Toast.LENGTH_SHORT).show();
     }
 }
